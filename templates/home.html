@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="icon" type="image/svg+xml" href="{{url_for('static',filename='veridian.svg')}}" sizes="any">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <script src=" {{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body theme="light">
+    <header class="navbar">
+        <div class="logo"></div>
+        <div class="name">&emsp;&emsp;&ensp;&nbsp;Veridian</div>
+        <div class="nav-links">
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="hero">
+        <h1>Securely store and manage your passwords</h1>
+        <p>Your privacy is our top priority. Access your credentials anywhere, anytime.</p>
+        <div class="actions">
+            <a href="{{ url_for('signup') }}" class="btn primary">Get Started</a>
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+        </div>
+    </main>
+    <div class="theme-switch-container">
+        <button id="theme-toggle-button"></button>
+    </div>
+</body>
+</html>

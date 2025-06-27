@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Entry</title>
+    <link rel="icon" type="image/svg+xml" href="{{url_for('static',filename='veridian.svg')}}" sizes="any">
+    <link rel="stylesheet" href="{{ url_for('static', filename='update.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+<body>
+    <div class="Content">
+        <header>
+            <h1>Update Entry</h1>
+            <nav>
+                {% if not current_user.is_authenticated %}
+                    <a href="{{ url_for('signup') }}">Sign Up</a> | <a href="{{ url_for('login') }}">Log In</a>
+                {% else %}
+                    <span>Welcome, {{ current_user.username }}!</span>
+                    <div class="logout-button-container">
+                        <a href=" {{ url_for('logout')}} ">
+                            <button id="logout-button"></button>
+                        </a>
+                    </div>
+                {% endif %}
+            </nav>
+        </header>
+        <main>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            {% if current_user.is_authenticated %}
+                <form method="POST">
+                    <input type="text" name="Purpose" value="{{ entry.purpose }}" placeholder="Purpose (e.g., Email)" required>
+                    <input type="text" name="Username" value="{{ entry.entry_username }}" placeholder="Username" required>
+                    <input type="password" name="Password" id="password-input" placeholder="Password" required>
+                    <div class="password-container">
+                        <button type="button" class="generate-btn">Generate Password</button>
+                        <label class="show-password">
+                            <input type="checkbox" id="show-password"> <span>Show Password</span>
+                        </label>
+                    </div>
+                    <input type="submit" value="Update Entry">
+                </form>
+                <div class="home-button-container">
+                    <a href="{{ url_for('home') }}">
+                        <button id="home-button"></button>
+                    </a>
+                </div>
+                
+            {% else %}
+                <p>Please log in to update entries.</p>
+            {% endif %}
+        </main>
+    </div>
+    <div class="theme-switch-container">
+        <button id="theme-toggle-button"></button>
+    </div>
+    <footer>
+        <p>&copy; 2025 Veridian</p>
+    </footer>
+</body>
+</html>

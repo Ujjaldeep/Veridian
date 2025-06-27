@@ -1,0 +1,177 @@
+/* signup.css */
+
+:root{
+    --bg: #eeeef1;
+    --button_color: #4A71CC;
+    --heading_color: #080D3D;
+    --text_or_border: #747C82;
+    --header_color: #003776;
+    --shadow_color: rgba(0,0,0,0.5);
+    --success_bg: #d1fae5;
+    --success_font: #065f46;
+    --error_bg: #fee2e2;
+    --error_font: #991b1b;
+}
+[theme="dark"]{
+    --bg: #020710;
+    --button_color: #e7b43d;
+    --heading_color: #e8cc53;
+    --text_or_border: rgb(212, 215, 218);
+    --header_color: #FFC889;
+    --shadow_color: #4d3c28;
+    --success_bg: #065f46;
+    --success_font: #d1fae5;
+    --error_bg: #991b1b;
+    --error_font: #fee2e2;
+    --gen_button_color: #99f4b7;
+    --show_pwd_color: #e8cc53;
+}
+
+body {
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
+    color: var(--heading_color);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Content {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    background: var(--bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow_color);
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    color: var(--heading_color);
+    font-family: 'Segoe UI';
+    font-size: 48px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: var(--button_color);
+    text-decoration: none;
+    margin: 0 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    padding: 10px;
+    background: var(--bg);
+    color: var(--heading_color);
+    border: 2px solid var(--text_or_border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type="submit"] {
+    background-color: var(--button_color);
+    color: var(--bg);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-weight: 600;
+    font-size: medium;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--button_color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.message.success {
+    background-color: var(--success_bg);
+    color: var(--success_font);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.message.error {
+    background-color: var(--error_bg);
+    color: var(--error_font);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.theme-switch-container {
+    position: fixed; 
+    bottom: 50px;    
+    right: 50px;     
+    z-index: 1000;   
+}
+
+#theme-toggle-button {
+    background-color: var(--bg); 
+    border: none;
+    border-radius: 50%; 
+    width: 50px; 
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px var(--shadow_color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+}
+
+#theme-toggle-button::before {
+    content: ''; /* Must be present for pseudo-element to render */
+    display: block; /* Make it a block-level element */
+    width: 30px;
+    height: 30px;
+    background-image: url('sun.svg');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    position: absolute;
+}
+
+/* Moon icon for dark mode */
+body[theme="dark"] #theme-toggle-button {
+    background-color: var(--bg);
+}
+
+body[theme="dark"] #theme-toggle-button::before {
+    background-image: url('moon.svg');
+}
+
+#theme-toggle-button:hover {
+    opacity: 0.9; /* Slight hover effect */
+}
