@@ -13,7 +13,7 @@ How to use:
 		a. Go to the directory you want to create the environment in.
 		b. Open Powershell in the same directory
 		c. Use the command python -m venv name
-		d.Change directory to it
+		d. Change directory to it
 		e. After the virtual environment is created, execute the command .\Scripts\Activate
 	3. You will now have started the virtual environment. Now, paste the requirements.txt file in the directory of virtual environment and use the command pip install -r requirements.txt
 	4. After all the modules are downloaded. Copy the app.py, setup.bat and custom folder to the name directory.
