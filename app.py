@@ -19,7 +19,7 @@ app.config['SQLALCHEMY_BINDS'] = {
 }
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-key_dir = "D://pwd_man//env//var//main-instance//key.mp3"
+key_dir = os.path.join(os.getcwd(),"var\\mai-intance\\key.mp3")
 
 try:
     with open(key_dir, "rb") as f:
