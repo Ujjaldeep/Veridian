@@ -18,7 +18,7 @@ How to use:
 	3. You will now have started the virtual environment. Now, paste the requirements.txt file in the directory of virtual environment and use the command pip install -r requirements.txt
 	4. After all the modules are downloaded. Copy the app.py, setup.bat and custom folder to the name directory.
 	5. Run setup.bat as administrator
-	6. Copy the databases, static and templates folder. Overwrite if they exist
+	6. Copy the databases(optional), static and templates folder.
 	7. In powershell execute the command python app.py
 	8. Ater this, click the port and your site will be running.
 	
