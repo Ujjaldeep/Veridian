@@ -9,16 +9,16 @@ You can use them, or create new users. If you want to delete these users, simply
 
 How to use:
 
-1. Create a virtual environment using python:
-	a. Go to the directory you want to create the environment in.
-	b. Open Powershell in the same directory
-	c. Use the command python -m venv name
-	d.Change directory to it
-	e. After the virtual environment is created, execute the command .\Scripts\Activate
-3. You will now have started the virtual environment. Now, paste the requirements.txt file in the directory of virtual environment and use the command pip install -r requirements.txt
-4. After all the modules are downloaded. Copy the app.py, setup.bat and custom folder to the name directory.
-5. Run setup.bat as administrator
-6. Copy the databases, static and templates folder. Overwrite if they exist
-7. In powershell execute the command python app.py
-8. Ater this, click the port and your site will be running.
-
+	1. Create a virtual environment using python:
+		a. Go to the directory you want to create the environment in.
+		b. Open Powershell in the same directory
+		c. Use the command python -m venv name
+		d.Change directory to it
+		e. After the virtual environment is created, execute the command .\Scripts\Activate
+	3. You will now have started the virtual environment. Now, paste the requirements.txt file in the directory of virtual environment and use the command pip install -r requirements.txt
+	4. After all the modules are downloaded. Copy the app.py, setup.bat and custom folder to the name directory.
+	5. Run setup.bat as administrator
+	6. Copy the databases, static and templates folder. Overwrite if they exist
+	7. In powershell execute the command python app.py
+	8. Ater this, click the port and your site will be running.
+	
